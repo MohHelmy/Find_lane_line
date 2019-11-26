@@ -23,11 +23,51 @@ The goals / steps of this project are the following:
 
 ### 1. Describe your pipeline. As part of the description, explain how you modified the draw_lines() function.
 
-My pipeline consisted of 5 steps. First, I converted the images to grayscale, then I .... 
+The pipeline consists of the following steps
 
-In order to draw a single line on the left and right lanes, I modified the draw_lines() function by ...
+Color Selection (Yellow and white lanes)
+Convert image to grayscale
+Canny Edge Detection
+Region of Interest Selection
+Hough Transform Line Detection 
 
-If you'd like to include images to show how the pipeline works, here is how to include an image: 
+The above mentioned pipeline is used to process the video , the video is being looked at at single image where each image goes throught he pipe line.
+
+Below a detailed description of each step of the pipe line:
+
+1.Color selection:
+We first run color selection on the input frame to select only the yellow and white shades of color and mask all other colors. To do this, we convert the input image to HSV (hue, saturation, value) color space. This makes it easier to select required colors using OpenCV's in Range function.
+
+image  needed
+
+2.Convert image to grayscale:
+Then we transform the color selected frame to a grayscale frame to obtian better results for canny edge To normalize any noise and sharpness, we perform a Gaussian blur on the grayscale image
+
+3.Canny Edge Detection:
+Then we run the Canny Edge Detection algorithm to detect edges in the frames
+
+4.Gaussian blur:
+To make the edges more smoother.
+
+
+5.Region of Interest Selection:
+We apply a Region of Interest mask which is a fixed polygon area to only retain the road lanes.
+
+
+
+6.Hough Transform Line Detection:
+Using probabilistic Hough transform we find line segments in the frame. Then, using draw_lines() function we draw the lines which represnts the road lanes.
+
+
+
+The function draw_lines() follows the below the steps to obtain/Draw the correct lines:
+takes all the lines found by the Hough transform.
+filtering the lines and ignore verical lines , we conside them as noise.
+
+
+7.Merging Images:
+now we merge our images, to obtain the final result
+
 
 ![alt text][image1]
 
@@ -35,13 +75,15 @@ If you'd like to include images to show how the pipeline works, here is how to i
 ### 2. Identify potential shortcomings with your current pipeline
 
 
-One potential shortcoming would be what would happen when ... 
+The pipeline relies on a restricted region of interest based on several iteration.
 
-Another shortcoming could be ...
+I belive the algorithm won't work as expected if the road was going up or down , as we have a constant region of interest.
+
+I have constant limits for color detections , i think the pipeline will perfom badly on darker , foggy road , sharp turns , tunnels or under bridges
 
 
 ### 3. Suggest possible improvements to your pipeline
 
-A possible improvement would be to ...
-
-Another potential improvement could be to ...
+Dynamic selection of the region of interest as it shall be based of road curvature.
+Identify a better method to detect curves.
+Identify better method to detect colors in differnt enviroment ,this should be dynamic.
