@@ -42,7 +42,7 @@ image  needed
 
 [//]: # (Image References)
 
-[image2]: ./images/image of interest.png "whiteCarLaneSwitch"
+[image2]: ./images/image_of_interest.png "whiteCarLaneSwitch"
 
 ![alt text][image2]
 
