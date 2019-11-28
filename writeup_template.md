@@ -42,54 +42,54 @@ image  needed
 
 [//]: # (Image References)
 
-[image1]: ./images/image of interest.png "whiteCarLaneSwitch"
+[image]: ./images/image of interest.png "whiteCarLaneSwitch"
 
-![alt text][image1]
+![alt text][image2]
 
 2.Convert image to grayscale:
 Then we transform the color selected frame to a grayscale frame to obtian better results for canny edge To normalize any noise and sharpness, we perform a Gaussian blur on the grayscale image
 
 [//]: # (Image References)
 
-[image1]: ./images/gray scal.png "whiteCarLaneSwitch"
+[image3]: ./images/gray scal.png "whiteCarLaneSwitch"
 
-![alt text][image1]
+![alt text][image3]
 
 3.Canny Edge Detection:
 Then we run the Canny Edge Detection algorithm to detect edges in the frames
 
 [//]: # (Image References)
 
-[image1]: ./images/Canny.png "whiteCarLaneSwitch"
+[image4]: ./images/Canny.png "whiteCarLaneSwitch"
 
-![alt text][image1]
+![alt text][image4]
 
 4.Gaussian blur:
 To make the edges more smoother.
 
 [//]: # (Image References)
 
-[image1]: ./images/Gauss.png "whiteCarLaneSwitch"
+[image5]: ./images/Gauss.png "whiteCarLaneSwitch"
 
-![alt text][image1]
+![alt text][image5]
 
 5.Region of Interest Selection:
 We apply a Region of Interest mask which is a fixed polygon area to only retain the road lanes.
 
 [//]: # (Image References)
 
-[image1]: ./images/image of interest.png "whiteCarLaneSwitch"
+[image6]: ./images/image of interest.png "whiteCarLaneSwitch"
 
-![alt text][image1]
+![alt text][image6]
 
 6.Hough Transform Line Detection:
 Using probabilistic Hough transform we find line segments in the frame. Then, using draw_lines() function we draw the lines which represnts the road lanes.
 
 [//]: # (Image References)
 
-[image1]: ./images/drawing lines.png "whiteCarLaneSwitch"
+[image7]: ./images/drawing lines.png "whiteCarLaneSwitch"
 
-![alt text][image1]
+![alt text][image7]
 
 The function draw_lines() follows the below the steps to obtain/Draw the correct lines:
 takes all the lines found by the Hough transform.
