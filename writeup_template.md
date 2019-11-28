@@ -51,7 +51,7 @@ Then we transform the color selected frame to a grayscale frame to obtian better
 
 [//]: # (Image References)
 
-[image3]: ./images/gray scal.png "whiteCarLaneSwitch"
+[image3]: ./images/gray_scal.png "whiteCarLaneSwitch"
 
 ![alt text][image3]
 
@@ -78,7 +78,7 @@ We apply a Region of Interest mask which is a fixed polygon area to only retain 
 
 [//]: # (Image References)
 
-[image6]: ./images/image of interest.png "whiteCarLaneSwitch"
+[image6]: ./images/image_of_interest.png "whiteCarLaneSwitch"
 
 ![alt text][image6]
 
@@ -101,7 +101,7 @@ now we merge our images, to obtain the final result
 
 [//]: # (Image References)
 
-[image1]: ./images/final image.png "whiteCarLaneSwitch"
+[image1]: ./images/final_image.png "whiteCarLaneSwitch"
 
 ![alt text][image1]
 
