@@ -87,7 +87,7 @@ Using probabilistic Hough transform we find line segments in the frame. Then, us
 
 [//]: # (Image References)
 
-[image7]: ./images/drawing lines.png "whiteCarLaneSwitch"
+[image7]: ./images/drawing_lines.png "whiteCarLaneSwitch"
 
 ![alt text][image7]
 
